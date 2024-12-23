@@ -14,17 +14,12 @@ class UsuarioController extends Controller
     }
 
     public function cadastrarCliente(Request $request){
-        $validated = $request->validate([
-            'nome' => 'required|string|max:255',
-            'email' => 'required|email|unique:usuarios,email',
-            'senha' => 'required|string|min:6',
-        ]);
-
+        $values = $request->all();
         $usuario = new Usuario();
-        $usuario->fill($validated);
+        $usuario->fill($values);
         $usuario->save();
 
-        return redirect()->route('login')->with('success', 'Cadastrado com sucesso!');
+        return redirect()->route('cadastrar.view');
     }
 
     public function login() {

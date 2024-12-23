@@ -13,6 +13,6 @@ use App\Http\Controllers\UsuarioController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::match(['get'], 'cadastrar', [ UsuarioController::class, 'cadastrar'])-> name('cadastrar');
-Route::match(['post'], 'cadastrar', [UsuarioController::class, 'cadastrarCliente'])-> name('cadastrar');
-Route::match(['get', 'post'], '/', [ UsuarioController::class, 'login'])-> name('login');
+Route::get('/cadastrar', [UsuarioController::class, 'cadastrar'])->name('cadastrar.view');
+Route::post('/usuario/cadastrar', [UsuarioController::class, 'cadastrarCliente'])->name('cadastrar-cliente');
+Route::get('/', [ UsuarioController::class, 'login'])-> name('login');

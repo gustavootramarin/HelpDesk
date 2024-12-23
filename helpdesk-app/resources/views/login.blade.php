@@ -18,10 +18,10 @@
             </div>
                 <form>
                     <label for="username">Usuário</label>
-                    <input type="text" id="username" placeholder="Nome de usuário ou E-mail">
+                    <input type="text" id="username" name="email" placeholder="Nome de usuário ou E-mail">
 
                     <label for="password">Senha</label>
-                    <input type="password" id="password" placeholder="Digite sua Senha">
+                    <input type="password" id="password" name="password" placeholder="Digite sua Senha">
 
                 <button
                     type="submit">ENTRAR
@@ -31,7 +31,7 @@
 
             <div class="links">
                 <a href="#">Esqueceu sua senha?</a>
-                <a href="{{ route('cadastrar') }}">Cadastre-se</a>
+                <a href="{{ route('cadastrar.view') }}">Cadastre-se</a>
             </div>
         </div>
     </div>
