@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Página de Login</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <title>Página de Login</title>
+    
 
 
 </head>
@@ -14,7 +14,7 @@
     <div class="container">
         <div class="boxlogin">
             <div class="user-icon">
-                <img src="{{ asset('imagens/adicionar-usuario.png') }}" alt="Ícone do usuário">
+                <img src="{{ asset('imagens/user-icon.png') }}" alt="Ícone do usuário">
             </div>
                 <form>
                     <label for="username">Usuário</label>
@@ -31,7 +31,7 @@
 
             <div class="links">
                 <a href="#">Esqueceu sua senha?</a>
-                <a href="cadastro.html">Cadastre-se</a>
+                <a href="{{ route('cadastrar') }}">Cadastre-se</a>
             </div>
         </div>
     </div>

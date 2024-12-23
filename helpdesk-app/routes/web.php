@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UsuarioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +13,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('login');
-});
+Route::match(['get'], 'cadastrar', [ UsuarioController::class, 'cadastrar'])-> name('cadastrar');
+Route::match(['post'], 'cadastrar', [UsuarioController::class, 'cadastrarCliente'])-> name('cadastrar');
+Route::match(['get', 'post'], '/', [ UsuarioController::class, 'login'])-> name('login');
